@@ -6,16 +6,15 @@
   top: 0;
   left: 0;
   width: calc(100% - 300px);
-  height: 70px;
-  border-bottom: 1px solid lightgrey;
   margin-left: 300px;
+  border-bottom: 1px solid lightgrey;
+  height: 70px;
 }
 
 .userMenu {
   position: relative;
   width: 70px;
   height: 70px;
-  background: lightgrey;
 }
 
 .userMenu::before {
@@ -43,10 +42,37 @@
 }
 
 .userMenu li {
+  position: relative;
+  z-index: 1;
   padding: 0 10px;
   line-height: 50px;
+  cursor: pointer;
 }
 
 .userMenu li:hover {
   background: lightgrey;
+}
+
+.userMenu ul::before,
+.userMenu ul::after {
+  position: absolute;
+  display: block;
+  content: '';
+  background: white;
+}
+
+.userMenu ul::before {
+  top: -9px;
+  right: 14px;
+  transform: rotate(45deg);
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,.15);
+}
+
+.userMenu ul::after {
+  top: 0px;
+  right: 8px;
+  width: 40px;
+  height: 20px;
 }

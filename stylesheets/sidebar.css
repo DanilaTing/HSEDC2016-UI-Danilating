@@ -15,15 +15,25 @@
   overflow-y: scroll;
 }
 
+.sidebarMenuItem {
+  position: relative;
+  height: 50px;
+}
+
+.sidebarMenuItem:hover {
+  height: auto;
+}
+
 .sidebarMenuItem:hover .sidebarSubmenu {
   display: block;
 }
 
 
 .sidebarMenuItem > div {
+  position: relative;
   width: 300px;
   height: 50px;
-  padding: 10px;
+  padding: 10px 10px 10px 60px;
   line-height: 30px;
 }
 
@@ -35,16 +45,53 @@
   background: lightgrey;
 }
 
+.sidebarMenuItem::before {
+  font-family: 'FontAwesome';
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  top: 0;
+  left: 10px;
+  content: ;
+  width: 40px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+}
+
+.sidebarMenuItem.apple::before      { content: '\f179'; }
+.sidebarMenuItem.behance::before    { content: '\f1b4'; }
+.sidebarMenuItem.fb::before         { content: '\f082'; }
+.sidebarMenuItem.db::before         { content: '\f16b'; }
+.sidebarMenuItem.github::before     { content: '\f113'; }
+.sidebarMenuItem.pinterest::before  { content: '\f231'; }
+.sidebarMenuItem.soundcloud::before { content: '\f1be'; }
+.sidebarMenuItem.medium::before     { content: '\f23a'; }
+.sidebarMenuItem.ie::before         { content: '\f26b'; }
+.sidebarMenuItem.trello::before     { content: '\f181'; }
+.sidebarMenuItem.mode::before       { content: '\f054'; }
+
+
 .sidebarSubmenu {
   display: none;
 }
 
 .sidebarSubmenuItem {
   height: 50px;
-  padding: 10px 10px 10px 20px;
+  padding: 10px 10px 10px 60px;
   line-height: 30px;
 }
 
 .sidebarSubmenuItem:hover {
   background: lightgrey;
+}
+
+.sidebarSubmenuItem:first-child {
+  display: none;
+}
+
+.sidebarSubmenuItem:last-child {
+  position: absolute;
+  bottom:0;
+  left: 0;
 }
